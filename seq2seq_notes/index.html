@@ -60,15 +60,15 @@ a large dimension can efficiently convey information from cell to cell, but come
 		<li><b>Encoder/Decoder Depth</b></li> <p> The number of stacked layer in encoder/decoder. We generally expect deeper networks to converge to better solution to shallower ones.</p>
 		<li><b>Residual Connection</b></li> <p> It is believed that the degradation in the performace when increasing the depth of network (although the solution space of shallow net is contained in the deeper one) is unlikely due to overfitting, but the difficulty in training a deep network. Generally, residual layers are easier to train than plain ones. </p>
 		<center>
-			<img class=img-responsive src=res_net.PNG alt="Union bound" style=width:50%;max-width:300px>
+			<img class=img-responsive src=images/res_net.PNG alt="Union bound" style=width:50%;max-width:300px>
 		</center>
 		<li><b>Encoder Type</b></li> <p>Bidirectional encoder takes into account both past and future part in input sequence. Meanwhile, unidirectional encoder only looks at past part. Intuitively, bidirectional creates better representation for the input sequence.</p>
 		<center>
-			<img class=img-responsive src=encoder_type.PNG alt="Union bound" style=width:50%;max-width:400px>
+			<img class=img-responsive src=images/encoder_type.PNG alt="Union bound" style=width:50%;max-width:400px>
 		</center>
 		<li><b>Input reversing</b></li> <p>In some application (time series denoising, language translation), reversing the input sequence will introduce many short term dependecies which makes the optimization problem in recurrent network much simpler.</p>
 		<center>
-			<img class=img-responsive src=reverse_input.PNG alt="Union bound" style=width:50%;max-width:180px>
+			<img class=img-responsive src=images/reverse_input.PNG alt="Union bound" style=width:50%;max-width:180px>
 		</center>
 	</ul> 
 <p><b>Learning Parameters</b>
