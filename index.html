@@ -1,13 +1,30 @@
+Tutorial for Neural Network
+Models
+The Recurrent Neural Network (RNN) can be trained to map an input sequence to an output sequence which is not necessarily of the same length. A simple strategy is to map the input sequence to a fixed-size vector using one RNN (encoder), then map the fixed-size vector to the target sequence with another RNN (decoder)
+RNN-Attention ― In vanilla sequence-to-sequence architecture, we have to compress all variable-length inputs into a fixed-length vector (last source state ) and pass it from encoder to decoder for decoding process. This works well for short, medium-length sequence, but a problem may arise for long sequence where fixed-length state vector can become an information bottleneck. In stead of ignoring all of state emitted from each source RNN cells in top layer, attention machenism allows the decoder to flexibly pay attention to the relevant part of the encoder by a combination between current target hidden state and weighted average of all source state.
 
-<style>
-</style>
+RNN-None-State ― no attention mechanism and initializing the decoder state with the last encoder state.
 
+RNN-None-Input ― no attention mechanism and concatenating the last decoder state to each decoder input.
 
+RNN models handles the dependencies between input and output using recurrent connections, which cannot allow for parallelization within training phase. To eliminate the constraint of sequential computation, the Transformer is a novel model architecture replacing completely recurrent connections with self-attention mechanism to extract the representation of input and output sequence, as well as encoder-decoder attention to connect encoder and decoder, as in RNN models.
+Transformer ―
 
-<div class="content">
-<h1>Tutorial for Neural Network</h1>
-<h2><a href=#linear-models aria-hidden=true class=anchor id=linear-models><path fill-rule=evenodd d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Linear models</h2>
-</div>
+Data Preprocessing
+Missing Value Imputing
 
+NaN Masking
+For NaN positions in input sequence, we just ignore it. For example, (xt, nan, xt+2) is transformed into (xt, xt+2).
 
+For those in output sequence, we use a weight mask whose values are 0 at NaN positions and 1 otherwise when computing the loss. For example, (xt, nan, xt+2) has weight mask (1,0,1).
 
+Cubic Interpolation
+We apply cubinc interpolation to fill the missing value in both input and output sequence. For example, (xt, nan, xt+2) is transformed into (xt, cubic(xt, xt+2) xt+2)
+
+Outlier Detection and Removal
+
+None
+Leave the outlier as it is
+
+Z-Score
+The Z-score method maps the data onto a distribution whose mean is defined as 0 and whose standard deviation is defined as 1. Once we centered and scaled the data, any point that is too far from 0 should be considered as an outlier.
