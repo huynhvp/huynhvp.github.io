@@ -28,8 +28,11 @@ decoder input.</p>
 RNN models handles the dependencies between input and output using recurrent connections, which cannot allow for parallelization within training phase.
 To eliminate the constraint of sequential computation, the <i>Transformer</i> is a novel model architecture replacing completely recurrent connections with self-attention
 mechanism to extract the representation of input and output sequence, as well as encoder-decoder attention to connect encoder and decoder, as in RNN models.
-<p><b>Transformer</b> ― The Transformer is still based on encoder-decoder structure. Both encoder and decoder are composed of stacked self-attention and point-wise fully connected layer. </p>
-
+<p><b>Transformer</b> ― The Transformer is still based on encoder-decoder structure. Both encoder and decoder are composed of stacked self-attention and point-wise fully connected layer. 
+	<center>
+		<img class=img-responsive src=images/transformer.PNG alt="Union bound" style=width:100%;max-width:700px>
+	</center>
+</p>
 <center>
 <img class=img-responsive src=images/pipeline.PNG alt="Union bound" style=width:100%;max-width:700px>
 </center>
