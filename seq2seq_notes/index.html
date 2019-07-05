@@ -41,7 +41,9 @@ mechanism to extract the representation of input and output sequence, as well as
 	<img class=img-responsive src=images/pipeline.PNG alt="Union bound" style=width:100%;max-width:700px>
 	</center>
 We save the output at every stage in order to avoid reloading the data and restarting everything everytime an operation happens.
-	<li> <b> Data bucket </b> </li>
+	<li> <b> Data bucket </b> In Seq2Seq learning, generally, sequences have different length: some are short, but some are long. A minibatch 
+		of randomly chosen training sequence will waste a lot of computational time. To address this issue, we create data buckets to group sequences of rougly same length into a bucket. Minibatch will be sampled
+	      from each bucket. Thus, \#bucket = 1 </li>
 <p><b>Missing Value Imputing</b>
 	<ul>
 		<li><b>NaN Masking</b></li> 
