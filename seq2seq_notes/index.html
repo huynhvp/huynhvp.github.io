@@ -36,16 +36,16 @@ mechanism to extract the representation of input and output sequence, as well as
 	<img class=img-responsive src=images/pipeline.PNG alt="Union bound" style=width:100%;max-width:700px>
 	</center>
 We save the output at every stage in order to avoid reloading the data and restarting everything everytime an operation happens.
-	<li> <b> Data bucket </b> In Seq2Seq learning, generally, sequences have different length: some are short, but some are long. A minibatch 
+	<p> <li> <b> Data bucket </b> In Seq2Seq learning, generally, sequences have different length: some are short, but some are long. A minibatch 
 		of randomly chosen training sequence will waste a lot of computational time. To address this issue, we create data buckets to group sequences of rougly same length into a bucket. Minibatch will be sampled
 	      from each bucket. Thus, #bucket = 1 means all sequences belong to only 1 bucket and are randomly selected for minibatch. </li>
-<p><b>Missing Value Imputing</b>
+<p><b>Missing Value Imputing</b> <p>
 	<ul>
 		<li><b>NaN Masking</b></li> 
 		<p>For NaN positions in input sequence, we just ignore it. For example, (x<sub>t</sub>, nan, x<sub>t+2</sub>) is transformed into (x<sub>t</sub>, x<sub>t+2</sub>).</p> 
 		<p>For those in output sequence, we use a weight mask whose values are 0 at NaN positions and 1 otherwise  when computing the loss. For example, (x<sub>t</sub>, nan, x<sub>t+2</sub>) has weight mask (1,0,1).</p>
 		<li><b>Cubic Interpolation</b></li>
-		<p>We apply cubinc interpolation to fill the missing value in both input and output sequence. For example, (x<sub>t</sub>, nan, x<sub>t+2</sub>) is transformed into (x<sub>t</sub>, cubic(x<sub>t</sub>, x<sub>t+2</sub>) x<sub>t+2</sub>)</p>
+		<p> We apply cubinc interpolation to fill the missing value in both input and output sequence. For example, (x<sub>t</sub>, nan, x<sub>t+2</sub>) is transformed into (x<sub>t</sub>, cubic(x<sub>t</sub>, x<sub>t+2</sub>) x<sub>t+2</sub>)</p>
 	</ul>
 </p>
 <p><b>Outlier Detection and Removal</b>
