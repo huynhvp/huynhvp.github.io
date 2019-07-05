@@ -1,11 +1,6 @@
 
 <style>
-
-
 </style>
-
-
-
 <div class="content">
 <h1>Tutorial for Neural Network</h1>
 <h2>Models</h2>
@@ -43,7 +38,7 @@ mechanism to extract the representation of input and output sequence, as well as
 We save the output at every stage in order to avoid reloading the data and restarting everything everytime an operation happens.
 	<li> <b> Data bucket </b> In Seq2Seq learning, generally, sequences have different length: some are short, but some are long. A minibatch 
 		of randomly chosen training sequence will waste a lot of computational time. To address this issue, we create data buckets to group sequences of rougly same length into a bucket. Minibatch will be sampled
-	      from each bucket. Thus, \#bucket = 1 </li>
+	      from each bucket. Thus, #bucket = 1 means all sequence belong to only 1 bucket and are randomly selected for minibatch. </li>
 <p><b>Missing Value Imputing</b>
 	<ul>
 		<li><b>NaN Masking</b></li> 
