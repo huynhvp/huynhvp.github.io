@@ -91,9 +91,9 @@ a large dimension can efficiently convey information from cell to cell, but come
 		<li><b>Dropout</b> <p>A serious problem in learning a large network is overfitting. Dropout is a simple way to address this issue. They key idea is to randomly drop hidden units at probabilty p from the network during the training. This prevents the units from co-adapting too much (learn very well the training samples, but perform badly on the testing ones)</p>  </li>		
 	</ul>
 <h2> Working with GPU </h2>
-We build the interface on top of Tensorflow-GPU with 2 possibilities: using GPUs or using CPUs. In case of using GPU, our current implementation automatically selects an available gpu for a particular operation. When we have multiple GPUs, it's often preferable to place an operation on a device of our choice (<a href="https://www.tensorflow.org/guide/using_gpu/"></a>). In addition, if we want to disable an expected GPU (ex. on-board GPU), one simple way to do that is to export manually environment variable:
+We build the interface on top of Tensorflow-GPU with 2 possibilities: using GPUs or using CPUs. In case of using GPU, our current implementation automatically selects an available gpu for a particular operation. When we have multiple GPUs, it's often preferable to place an operation on a device of our choice (<a href="https://www.tensorflow.org/guide/using_gpu/">https://www.tensorflow.org/guide/using_gpu/</a>). In addition, if we want to disable an expected GPU (ex. on-board GPU), one simple way to do that is to export manually environment variable:
 
-<p> export cuda_visible_devices=gpu we want to use  </p>
+<p> &ensp; &ensp; &ensp; &ensp; export cuda_visible_devices=<i> gpu we want to use </i>  </p>
 To get availabel GPUs, in python tensorflow, we can use: tf.test.gpu_device_name()
 </div>
 
