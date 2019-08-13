@@ -5,16 +5,9 @@
 <h1>Tutorial for Neural Network</h1>
 <h2>Starting the server</h2>
 To run the interface, please execute below command at your command prompt: 
-
-	```
-	bokeh serve --show Bokeh_Server 
-	```
-
+	<p> &ensp; bokeh serve --show Bokeh_Server  </p>
 Then navigate to the URL:
-
-	``` 
-	http://localhost:5006/Folder 
-	```
+	<p> &ensp; http://localhost:5006/Folder </p>
 
 in your browser.
 <h2>Models</h2>
@@ -98,7 +91,7 @@ a large dimension can efficiently convey information from cell to cell, but come
 		<li><b>Dropout</b> <p>A serious problem in learning a large network is overfitting. Dropout is a simple way to address this issue. They key idea is to randomly drop hidden units at probabilty p from the network during the training. This prevents the units from co-adapting too much (learn very well the training samples, but perform badly on the testing ones)</p>  </li>		
 	</ul>
 <h2> Working with GPU </h2>
-We build the interface on top of Tensorflow-GPU with 2 possibilies: using GPUs or using CPUs. In case of using GPU, our current implementation automatically selects an available gpu for a particular operation. When we have multiple GPUs, it's often preferable to place an operation on a device of our choice [](https://www.tensorflow.org/guide/using_gpu/)
+We build the interface on top of Tensorflow-GPU with 2 possibilies: using GPUs or using CPUs. In case of using GPU, our current implementation automatically selects an available gpu for a particular operation. When we have multiple GPUs, it's often preferable to place an operation on a device of our choice (<a href="https://www.tensorflow.org/guide/using_gpu/"></a>).
 
 </div>
 
