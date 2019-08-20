@@ -37,7 +37,7 @@ mechanism to extract the representation of input and output sequence, as well as
 </p>
 <h2>Data Preprocessing</h2>
 <p><b>Data Format</b></p>
-Currently, the interface supports the datasets with python dictionary format: {"input", "output"}. Particularly, "input" is a list of input items [X] where X can be input time sequence (Seq2Seq models) or input image (classification model) ; "output" is a list of output items [Y] corresponding to X
+Currently, the interface supports the datasets with python dictionary format: {"input": [X], "output": [Y]}. Particularly, "input" is a list of input items [X] where X can be input time sequence (Seq2Seq models) or input image (classification model) ; "output" is a list of output items [Y] corresponding to X
 	where Y can be output time sequence or image label (See two example figures below) .
 		<center>
 			<img class=img-responsive src=images/seq_bitcoin.png alt="Union bound" style=width:50%;max-width:300px>
