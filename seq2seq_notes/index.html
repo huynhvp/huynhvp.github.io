@@ -49,14 +49,14 @@ Currently, the interface supports the datasets with python dictionary format: {"
 We employ pickle to save the dataset and load them to the interface:
 <ul>
  <li>  Save:
-<p> &ensp; &ensp; &ensp; &ensp;	with open('file.data', 'wb') as handle:
-    		 &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; pickle.dump({"input": [X], "output": [Y]}, handle, protocol=pickle.HIGHEST_PROTOCOL) </p>
+<p> &ensp; &ensp; &ensp; &ensp;	with open('file.data', 'wb') as handle: </p>
+    	<p>	 &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; pickle.dump({"input": [X], "output": [Y]}, handle, protocol=pickle.HIGHEST_PROTOCOL) </p>
 </li> 
 <li> Load:
-<p> &ensp; &ensp; &ensp; &ensp;	with open('file.data', 'rb') as handle:
-    	&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; 	df = pickle.load(handle)
-	&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; 	past_dataset = df["input"]
-	&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; 	future_dataset = df["output"] </p>
+<p> &ensp; &ensp; &ensp; &ensp;	with open('file.data', 'rb') as handle:  </p>
+ <p>   	&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; 	df = pickle.load(handle)  </p>
+<p>	&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; 	past_dataset = df["input"]  </p>
+<p>	&ensp; &ensp; &ensp; &ensp; &ensp; &ensp; 	future_dataset = df["output"] </p>
 </li> 
 </ul>
 </p>
