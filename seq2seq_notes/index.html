@@ -37,9 +37,15 @@ mechanism to extract the representation of input and output sequence, as well as
 </p>
 <h2>Data Preprocessing</h2>
 <p><b>Data Format</b></p>
-	Currently, the interface supports the datasets with python dictionary format: {"input", "output"}
-<p><b> Prepare the data </b> </p>
-Initially, we only have the raw data under array format. For example, for BitCoin data, it is a time series with the shape of ~2300x1 (2300: length or number of data, 1: one variable), for Lorenz63 data, it is a time series with the shape of ~Lx3 (L: length, 3: three variables x, y, z).
+Currently, the interface supports the datasets with python dictionary format: {"input", "output"}. Particularly, "input" is a list of input items [X] where X can be input time sequence (for ex. X) or image ; "output" is a list of output items [Y]
+	where Y can be output time sequence or image label.
+We employ pickle to save the dataset and load them to the interface:
++ Save:
+	with open('file.data', 'wb') as handle:
+    		pickle.dump({"input": [X], "output": [Y]}, handle, protocol=pickle.HIGHEST_PROTOCOL)
++ Load:
+	with open('file.data', 'rb') as handle:
+    		df = pickle.load(handle)
 	
 <p><b>Data Directory</b></p>
 	To support for unlimited size of dataset, we do not 
