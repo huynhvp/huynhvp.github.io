@@ -38,7 +38,7 @@ mechanism to extract the representation of input and output sequence, as well as
 <h2>Data Preprocessing</h2>
 <p><b>Data Format</b></p>
 Currently, the interface supports the datasets with python dictionary format: {"input", "output"}. Particularly, "input" is a list of input items [X] where X can be input time sequence (Seq2Seq models) or input image (classification model) ; "output" is a list of output items [Y] corresponding to X
-	where Y can be output time sequence or image label.
+	where Y can be output time sequence or image label (See two example figures below) .
 		<center>
 			<img class=img-responsive src=images/seq_bitcoin.png alt="Union bound" style=width:50%;max-width:300px>
 		</center>
@@ -50,10 +50,9 @@ We employ pickle to save the dataset and load them to the interface:
 <ul>
  <li>  Save:
 <p> &ensp; &ensp; &ensp; &ensp;	with open('file.data', 'wb') as handle:
-    		pickle.dump({"input": [X], "output": [Y]}, handle, protocol=pickle.HIGHEST_PROTOCOL) </p>
+    		 &ensp; &ensp; &ensp; &ensp; &ensp; &ensp; pickle.dump({"input": [X], "output": [Y]}, handle, protocol=pickle.HIGHEST_PROTOCOL) </p>
 </li> 
-<li>
-+ Load:
+<li> Load:
 <p> &ensp; &ensp; &ensp; &ensp;	with open('file.data', 'rb') as handle:
     		df = pickle.load(handle)
 		past_dataset = df["input"]
