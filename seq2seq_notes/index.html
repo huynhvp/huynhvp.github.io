@@ -37,22 +37,30 @@ mechanism to extract the representation of input and output sequence, as well as
 </p>
 <h2>Data Preprocessing</h2>
 <p><b>Data Format</b></p>
-Currently, the interface supports the datasets with python dictionary format: {"input", "output"}. Particularly, "input" is a list of input items [X] where X can be input time sequence or input image ; "output" is a list of output items [Y]
+Currently, the interface supports the datasets with python dictionary format: {"input", "output"}. Particularly, "input" is a list of input items [X] where X can be input time sequence (Seq2Seq models) or input image (classification model) ; "output" is a list of output items [Y] corresponding to X
 	where Y can be output time sequence or image label.
 		<center>
 			<img class=img-responsive src=images/seq_bitcoin.png alt="Union bound" style=width:50%;max-width:300px>
+		</center>
+		<center>
 			<img class=img-responsive src=images/mnist_img.png alt="Union bound" style=width:50%;max-width:300px>
 		</center>
+<p>
 We employ pickle to save the dataset and load them to the interface:
-+ Save:
-	with open('file.data', 'wb') as handle:
-    		pickle.dump({"input": [X], "output": [Y]}, handle, protocol=pickle.HIGHEST_PROTOCOL)
+<ul>
+ <li>  Save:
+<p> &ensp; &ensp; &ensp; &ensp;	with open('file.data', 'wb') as handle:
+    		pickle.dump({"input": [X], "output": [Y]}, handle, protocol=pickle.HIGHEST_PROTOCOL) </p>
+</li> 
+<li>
 + Load:
-	with open('file.data', 'rb') as handle:
+<p> &ensp; &ensp; &ensp; &ensp;	with open('file.data', 'rb') as handle:
     		df = pickle.load(handle)
 		past_dataset = df["input"]
-		future_dataset = df["output"]
-	
+		future_dataset = df["output"] </p>
+</li> 
+</ul>
+</p>
 <p><b>Data Directory</b></p>
 To facilitate the uploading processing as well as support for unlimited size of dataset, we create a local directory to place all the considered datasets and load them to theinterface locally.
 <p><b>Data Processing Pipeline</b></p>
