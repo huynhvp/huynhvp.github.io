@@ -37,8 +37,12 @@ mechanism to extract the representation of input and output sequence, as well as
 </p>
 <h2>Data Preprocessing</h2>
 <p><b>Data Format</b></p>
-Currently, the interface supports the datasets with python dictionary format: {"input", "output"}. Particularly, "input" is a list of input items [X] where X can be input time sequence (for ex. X) or image ; "output" is a list of output items [Y]
+Currently, the interface supports the datasets with python dictionary format: {"input", "output"}. Particularly, "input" is a list of input items [X] where X can be input time sequence or input image ; "output" is a list of output items [Y]
 	where Y can be output time sequence or image label.
+		<center>
+			<img class=img-responsive src=images/seq_bitcoin.png alt="Union bound" style=width:50%;max-width:300px>
+			<img class=img-responsive src=images/mnist_img.png alt="Union bound" style=width:50%;max-width:300px>
+		</center>
 We employ pickle to save the dataset and load them to the interface:
 + Save:
 	with open('file.data', 'wb') as handle:
@@ -46,9 +50,11 @@ We employ pickle to save the dataset and load them to the interface:
 + Load:
 	with open('file.data', 'rb') as handle:
     		df = pickle.load(handle)
+		past_dataset = df["input"]
+		future_dataset = df["output"]
 	
 <p><b>Data Directory</b></p>
-	To support for unlimited size of dataset, we do not 
+To facilitate the uploading processing as well as support for unlimited size of dataset, we create a local directory to place all the considered datasets and load them to theinterface locally.
 <p><b>Data Processing Pipeline</b></p>
 	<center>
 	<img class=img-responsive src=images/pipeline.PNG alt="Union bound" style=width:100%;max-width:700px>
