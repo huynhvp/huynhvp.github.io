@@ -118,7 +118,9 @@ a large dimension can efficiently convey information from cell to cell, but come
 	<img class=img-responsive src=images/lr_scheme.PNG alt="Union bound" style=width:100%;max-width:700px>
 	</center>
 	<ul>
-		<li><b>Warm-up step</b>: </li>
+		<li><b>Warm-up step</b>: learning rate (lr) starts at a small value, increases and achieve intial lr after this number of steps </li>
+		<li><b>Start decay step</b>: lr keeps to be constant in this number of steps, then it starts to decay  </li>
+		<li><b>Decay step</b>:  halving the learning rate every this number of steps.  </li>
 	</ul>
 <h2> Working with GPU </h2>
 We build the interface on top of Tensorflow-GPU with 2 possibilities: using GPUs or using CPUs. In case of using GPU, our current implementation automatically selects an available gpu for a particular operation. When we have multiple GPUs, it's often preferable to place an operation on a device of our choice (<a href="https://www.tensorflow.org/guide/using_gpu/">https://www.tensorflow.org/guide/using_gpu/</a>). In addition, if we want to disable an expected GPU (ex. on-board GPU), one simple way to do that is to export manually environment variable:
