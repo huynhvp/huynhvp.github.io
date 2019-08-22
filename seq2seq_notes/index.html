@@ -110,10 +110,13 @@ a large dimension can efficiently convey information from cell to cell, but come
 	<ul>
 		<li><b>Learning rate (LR)</b> <p>LR represents the learning's speed. Small LRs are likely to lead to consistent but slow progress. Large LRs can give better progress but more risky.</p>
 		</li>
-		<li><b>LR decay scheme</b><p>LR decay scheme involves reducing slowly the LR over time. The intuition here is that at some initial phases, large LR helps to achieve fast learning, then the LR is getting smaller in order to avoid the oscillation in learning step and stably converge to the optimum.   </p></li>
+		<li><b>LR decay scheme</b><p>LR decay scheme involves reducing slowly the LR over time. The intuition here is that at some initial phases, large LR helps to achieve fast learning, then the LR is getting smaller in order to avoid the oscillation in learning step and stably converge to the optimum.   </p></li>	
 		<li><b>LR warm-up scheme</b><p>LR warm-up scheme involves increasing the learning rate to a large value over a certain initial phases before starting reducing it using decay schemes. It helps to initialize the stability of the network in the early stage of training.</p></li>
 		<li><b>Dropout</b> <p>A serious problem in learning a large network is overfitting. Dropout is a simple way to address this issue. They key idea is to randomly drop hidden units at probabilty p from the network during the training. This prevents the units from co-adapting too much (learn very well the training samples, but perform badly on the testing ones)</p>  </li>		
 	</ul>
+	<center>
+	<img class=img-responsive src=images/lr_scheme.PNG alt="Union bound" style=width:100%;max-width:700px>
+	</center>
 <h2> Working with GPU </h2>
 We build the interface on top of Tensorflow-GPU with 2 possibilities: using GPUs or using CPUs. In case of using GPU, our current implementation automatically selects an available gpu for a particular operation. When we have multiple GPUs, it's often preferable to place an operation on a device of our choice (<a href="https://www.tensorflow.org/guide/using_gpu/">https://www.tensorflow.org/guide/using_gpu/</a>). In addition, if we want to disable an expected GPU (ex. on-board GPU), one simple way to do that is to export manually environment variable:
 
