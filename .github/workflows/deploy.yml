@@ -23,6 +23,7 @@ jobs:
         bundler: latest
     - name: Install deps
       run: |
+        bundle install
         npm install -g mermaid.cli
     - name: Setup deploy options
       id: setup
