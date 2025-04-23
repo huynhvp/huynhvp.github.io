@@ -17,16 +17,16 @@ social: true  # includes social icons at the bottom of the page
 
 I am currently a R&D AI Engineer at [Orange Labs, France](https://hellofuture.orange.com/fr/). 
 
-- My research interest revolves around <b>Machine Learning</b> and <b>Natural Language Processing (NLP)</b>:
-  - AI Agentic workflow design (e.g. Langchain, Langgraph, Llamaindex)
-  - Question-Answering (e.g. Retrieval Augmented Generation (RAG))
-  - Semantic Search (e.g. using text embedding models, text search, vector search index such as Elastic Search)
+- I'm particularly interested in <b>Machine Learning</b> and <b>Natural Language Processing (NLP)</b>, with a particular focus on <b>Large Language Models (LLMs)</b>.:
+  - AI Agentic workflow design (e.g. Langchain, Langgraph, vLLM)
+  - Question-Answering (e.g. Retrieval Augmented Generation (RAG), GraphRAG)
+  - Information retrieval, Semantic Search (e.g. using text embedding models, text search, vector search index such as Elastic Search)
   - Structured / Unstructured data annotation (e.g. Named Entity Recognition, Entity Linking).
   
 <p></p>
-- I like to develop and optimize APIs (e.g. Flask, Fastapi, Celery, MLflow, vLLM) to make my works accessible. I am a learner of microservices and distributed computing architecture (e.g. Docker, Ray).
+- I like to develop and optimize APIs (e.g. Fastapi, Pydantic, Asyncio, MLflow, vLLM) to make my works accessible. I am a learner of microservices and distributed computing architecture (e.g. Docker, Ray).
 
-- I mostly do Python. I like to write clean and quality code with poetry, ruff. I use gitlab/github streamlining workflows for CI/CD. When I write UI, I use Javascript (ReactJS).
+- I mostly do Python. I like to write clean and quality code with poetry, ruff and mypy. I use gitlab/github streamlining workflows for CI/CD. When I write UI, I use Javascript (ReactJS).
 
 - I also like to read and write academic papers, as well as technical blog posts.
 
